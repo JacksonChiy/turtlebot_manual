@@ -21,7 +21,7 @@ A local PC, a MicroSD slot or card reader, an HDMI monitor, a keyboard, and wifi
 
 After assembly, PC, SBC(Rasberry Pi) and OpenCR need to be setup in order to run ROS. Before actually installing the setup, a suitable version of ROS needs to be chosen and this affects the version of Ubuntu that needs to be installed. 
 
-<img src="/Users/jackson/Documents/turtlebot/截屏2023-06-15 14.20.41.png" alt="截屏2023-06-15 14.20.41" style="zoom:50%;" />
+<img src="截屏2023-06-15 14.20.41.png" alt="截屏2023-06-15 14.20.41" style="zoom:50%;" />
 
 After the suitable version is chosen, follow the corresponding version setup on https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/. The following is an example illustration of ROS Noetic setup.
 
@@ -70,7 +70,7 @@ $ ifconfig
 
 to check the IP address of the PC under the wifi
 
-![截屏2023-06-15 14.37.26](/Users/jackson/Documents/turtlebot/截屏2023-06-15 14.37.26.png)
+![截屏2023-06-15 14.37.26](截屏2023-06-15 14.37.26.png)
 
 here the IP address is 10.97.2.75. This also needs to be used for SBC setup and the correct IP addresses need to be configured correctly in order to connect local PC with turtlebots.
 
@@ -86,7 +86,7 @@ Update ROS_MASTER_URI and ROS_HOSTNAME with the PC's IP address.
 
 A thing to notice is that the port for ROS_MASTER_URI is 11311.
 
-<img src="/Users/jackson/Documents/turtlebot/截屏2023-06-15 14.54.04.png" alt="截屏2023-06-15 14.54.04" style="zoom:50%;" />
+<img src="截屏2023-06-15 14.54.04.png" alt="截屏2023-06-15 14.54.04" style="zoom:50%;" />
 
 After modifying the file, source the file with the following command.
 
@@ -103,7 +103,7 @@ On local PC:
 1. Download turtlebot3 SBC image from https://emanual.robotis.com/docs/en/platform/turtlebot3/sbc_setup/#download-turtlebot3-sbc-image with the correct version that corresponds to the model of Raspberry Pi. 
 2. Extract the `.img` file and save it in the local disk.
 3. Download Raspberry Pi Imager from https://www.raspberrypi.com/software/
-4. ![rpi_imager](/Users/jackson/Documents/turtlebot/rpi_imager.gif)
+4. ![rpi_imager](rpi_imager.gif)
 
 Click `CHOOSE OS`.
 
