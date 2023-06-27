@@ -142,7 +142,7 @@ $ roscore
 
 A successful installation of ROS and successful execution of roscore would look like this:
 
-![roscore](roscore.png)
+![roscore](pic/roscore.png)
 
 2. Turtlebot bringup
 
@@ -178,7 +178,7 @@ To avoid manually set it every time, you can add this command to ~/.bashrc and s
 
 An example looks like this:
 
-![model_name](model_name.png)
+![model_name](pic/model_name.png)
 
 
 
@@ -280,7 +280,7 @@ After this, the camera should be calibrated correctly in order to detect ArUco m
 
 After installation, set up the real world environment like this:
 
-![real world environment](overall setting.jpg)
+![real world environment](pic/overall setting.jpg)
 
 Make sure the camera is on top of the two ArUco marker and the ArUco markers are large enough to be detected. In the example, another layer is borrowed from a new turtlebot kit in order to make the large ArUco marker to stick on top of the turtlebot.
 
@@ -326,7 +326,7 @@ $ rosrun rqt_gui rqt_gui
 
 Correct detection should look like this:
 
-![detect](nav_test2_3.png)
+![detect](pic/nav_test2_3.png)
 
 
 
@@ -340,7 +340,7 @@ $ roslaunch navigation_in_unknown_map navigation_in_unknown_map.launch
 
 It will prompt a window like this:
 
-![rviz](rviz.png)
+![rviz](pic/rviz.png)
 
 7. On local PC, open a new terminal and run
 
@@ -358,7 +358,7 @@ To change the ID number being used:
 
 1. In __multiple_aruco_marker_finder.launch__ file under __auto_aruco_marker_finder/launch__ directory, change the following:
 
-![markerID](markerID.png)
+![markerID](pic/markerID.png)
 
 from id100 and id101 to idxxx where xxx is the id number being used.
 
