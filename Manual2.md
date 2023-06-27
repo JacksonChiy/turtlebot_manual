@@ -22,7 +22,7 @@ All custom packages and source code should go to the *catkin_ws/src* directory.
 
 ## Pull repository
 
-After pulling the repository, copy all packages to the *catkin_ws/src* directory under the home directory and then run 
+After pulling the repository, copy all packages to the *catkin_ws/src* directory and then run 
 
 ```shell
 $ catkin_make
@@ -273,6 +273,96 @@ A full tutorial can be found here:
 https://ros-developer.com/2017/04/23/aruco-ros/
 
 https://ros-developer.com/2017/04/23/camera-calibration-with-ros/
+
+After this, the camera should be calibrated correctly in order to detect ArUco markers.
+
+
+
+After installation, set up the real world environment like this:
+
+![real world environment](overall setting.jpg)
+
+Make sure the camera is on top of the two ArUco marker and the ArUco markers are large enough to be detected.
+
+
+
+#### To run auto navigation:
+
+Firstly, the id number of ArUco markers being used need to be remember. In the example, marker on robot has id 100 and marker on the ground has ID 101. Different IDs can be used with modificatioln in the code in order to correctly detect and read marker positions.
+
+1. On local PC, run
+
+``` shell
+$ roscore
+```
+
+2. On local PC, open a new terminal window and run
+
+```shell
+$ ssh ubuntu@{IP_ADDRESS_OF_RASPBERRY_PI}
+```
+
+password is __turtlebot__
+
+3. On ssh terminal, run
+
+```shell
+$ roslaunch turtlebot3_bringup turtlebot3_robot.launch
+```
+
+4. On local PC, open a new terminal window and run
+
+```shell
+$ roslaunch auto_aruco_marker_finder multiple_aruco_marker_finder.launch
+```
+
+5. (optional) To check if markers are correctly detected, run
+
+```shell
+$ rosrun rqt_gui rqt_gui
+```
+
+Correct detection should look like this:
+
+![detect](nav_test2_3.png)
+
+
+
+The rqt window shows a correct detection.
+
+6. On local PC, open a new window and run
+
+```shell
+$ roslaunch navigation_in_unknown_map navigation_in_unknown_map.launch
+```
+
+It will prompt a window like this:
+
+![rviz](rviz.png)
+
+7. On local PC, open a new terminal and run
+
+```shell
+$ rosrun auto_navigation goal_pose.py
+```
+
+Then the robot should be moving to the destination.
+
+If the robot is not moving and error occurs on the terminal, shutdown all terminal and repeat from step 1.
+
+
+
+To change the ID number being used:
+
+1. In __multiple_aruco_marker_finder.launch__ file under __auto_aruco_marker_finder/launch__ directory, change the following:
+
+![markerID](markerID.png)
+
+from id100 and id101 to idxxx where xxx is the id number being used.
+
+2. In goal_pose.py file, change id100 and id101 accordingly.
+
+
 
 
 
