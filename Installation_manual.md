@@ -21,7 +21,7 @@ A turtlebot, the turtlebot kit, a local PC, a MicroSD slot or card reader on loc
 
 After assembly, PC, SBC(Rasberry Pi) and OpenCR need to be setup in order to run ROS. Before actually installing the setup, a suitable version of ROS needs to be chosen and this affects the version of Ubuntu that needs to be installed. 
 
-<img src="截屏2023-06-15 14.20.41.png" alt="截屏2023-06-15 14.20.41" style="zoom:50%;" />
+<img src="pic/distribution.png" alt="pic/distribution.png" style="zoom:50%;" />
 
 After the suitable version is chosen, follow the corresponding version setup on https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/. The following is an example illustration of ROS Noetic setup.
 
@@ -70,7 +70,7 @@ $ ifconfig
 
 to check the IP address of the PC under the wifi
 
-![截屏2023-06-15 14.37.26](截屏2023-06-15 14.37.26.png)
+![ifconfig](pic/ifconfig.png)
 
 here the IP address is 10.97.2.75. This also needs to be used for SBC setup and the correct IP addresses need to be configured correctly in order to connect local PC with turtlebots.
 
@@ -86,7 +86,7 @@ Update ROS_MASTER_URI and ROS_HOSTNAME with the PC's IP address.
 
 A thing to notice is that the port for ROS_MASTER_URI is 11311.
 
-<img src="截屏2023-06-15 14.54.04.png" alt="截屏2023-06-15 14.54.04" style="zoom:50%;" />
+<img src="pic/bashrc.png" alt="pic/bashrc/png" style="zoom:50%;" />
 
 After modifying the file, source the file with the following command.
 
@@ -105,7 +105,7 @@ On local PC:
 1. Download turtlebot3 SBC image from https://emanual.robotis.com/docs/en/platform/turtlebot3/sbc_setup/#download-turtlebot3-sbc-image with the correct version that corresponds to the model of Raspberry Pi. 
 2. Extract the `.img` file and save it in the local disk.
 3. Download Raspberry Pi Imager from https://www.raspberrypi.com/software/
-4. ![rpi_imager](rpi_imager.gif)
+4. ![rpi_imager](pic/rpi_imager.gif)
 
 Click `CHOOSE OS`.
 
@@ -133,11 +133,11 @@ $ cd /media/$USER/writable/etc/netplan
 $ sudo nano 50-cloud-init.yaml
 ```
 
-![ros2_sbc_netcfg](ros2_sbc_netcfg.png)
+![ros2_sbc_netcfg](pic/ros2_sbc_netcfg.png)
 
  replace the `WIFI_SSID` and `WIFI_PASSWORD` with wifi SSID and password.
 
-![network_setup](network_setup.gif)
+![network_setup](pic/network_setup.gif)
 
 If the file connot be configured on local PC due to any reasons, eg. cannot found the microSD directory on local PC using terminal, you can configure the network on the Raspberry Pi. (A micro-HDMI to HDMI cable is needed)
 
@@ -158,7 +158,7 @@ e. Login with ID `ubuntu` and PASSWORD `turtlebot`.
 
 
 
-After booting up the Raspberry Pi,  go to /etc/netplan from (home?) directory and edit 50-cloud-init.yaml file as described above.
+After booting up the Raspberry Pi,  go to /etc/netplan from root(/) directory and edit 50-cloud-init.yaml file as described above.
 
 
 
@@ -176,7 +176,7 @@ to check IP address. If an IP address is assigned, the Raspberry Pi is successfu
 
 #### ROS  network configuration
 
-![ROS network configuration](ros1_sbc_netcfg.gif)
+![ROS network configuration](pic/ros1_sbc_netcfg.gif)
 
 ##### On SBC (Raspberry PI)
 
@@ -290,7 +290,7 @@ $ ./update.sh $OPENCR_PORT $OPENCR_MODEL.opencr
 
 You can use `PUSH SW 1` and `PUSH SW 2` buttons to see whether your robot has been properly assembled. This process tests the left and right DYNAMIXEL’s and the [OpenCR](https://emanual.robotis.com/docs/en/parts/controller/opencr10/) board.
 
-![test](opencr_models.png)
+![test](pic/opencr_models.png)
 
 1. After assembling TurtleBot3, connect the power to [OpenCR](https://emanual.robotis.com/docs/en/parts/controller/opencr10/) and turn on the power switch of OpenCR. The red `Power LED` will be turned on.
 2. Place the robot on the flat ground in a wide open area. For the test, safety radius of 1 meter (40 inches) is recommended.

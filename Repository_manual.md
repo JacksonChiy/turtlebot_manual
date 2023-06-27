@@ -282,11 +282,13 @@ After installation, set up the real world environment like this:
 
 ![real world environment](overall setting.jpg)
 
-Make sure the camera is on top of the two ArUco marker and the ArUco markers are large enough to be detected.
+Make sure the camera is on top of the two ArUco marker and the ArUco markers are large enough to be detected. In the example, another layer is borrowed from a new turtlebot kit in order to make the large ArUco marker to stick on top of the turtlebot.
 
 
 
 #### To run auto navigation:
+
+In auto navigation, the camera detect the marker on top of the robot and the marker on the ground. The marker on the ground is the goal position and the application allow the robot to navigate from its original position to the goal position.
 
 Firstly, the id number of ArUco markers being used need to be remember. In the example, marker on robot has id 100 and marker on the ground has ID 101. Different IDs can be used with modificatioln in the code in order to correctly detect and read marker positions.
 
@@ -362,7 +364,7 @@ from id100 and id101 to idxxx where xxx is the id number being used.
 
 2. In goal_pose.py file, change id100 and id101 accordingly.
 
-
+After this, auto navigation should be running properly.
 
 
 
