@@ -332,17 +332,8 @@ Correct detection should look like this:
 
 The rqt window shows a correct detection.
 
-6. On local PC, open a new window and run
 
-```shell
-$ roslaunch navigation_in_unknown_map navigation_in_unknown_map.launch
-```
-
-It will prompt a window like this:
-
-![rviz](pic/rviz.png)
-
-7. On local PC, open a new terminal and run
+6. On local PC, open a new terminal and run
 
 ```shell
 $ rosrun auto_navigation goal_pose.py
